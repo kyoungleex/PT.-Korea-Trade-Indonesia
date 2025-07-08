@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Korea Trade Indonesia - Authentic Korean Lifestyle</title>
+    <meta name="description" content="Premium Korean fashion and beauty products curated for Indonesia. Visit Studio Hangang boutique in Bandung.">
+    <meta name="keywords" content="Korean fashion, K-beauty, Korean cosmetics, Studio Hangang, Korean import, Bandung">
+    <meta name="author" content="PT. Korea Trade Indonesia">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PT. Korea Trade Indonesia - Authentic Korean Lifestyle">
+    <meta property="og:description" content="Premium Korean fashion and beauty products curated for Indonesia">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://koreatrade.co.id">
+    <meta property="og:image" content="https://koreatrade.co.id/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <style>
+        :root {
+            --primary-cream: #F8F6F0;
+            --charcoal-gray: #2D3436;
+            --warm-beige: #E8DCC6;
+            --muted-rose: #D4A574;
+            --soft-sage: #A8B5A0;
+            --pure-white: #FFFFFF;
+            --light-gray: #F1F2F6;
+            --deep-charcoal: #1E2022;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal-gray);
+            background-color: var(--primary-cream);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px;}
+        header {
+            background: var(--pure-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        nav {
+            display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--deep-charcoal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .logo:hover { color: var(--muted-rose);}
+        .nav-links { display: flex; list-style: none; gap: 2rem;}
+        .nav-links a {
+            text-decoration: none; color: var(--charcoal-gray);
+            font-weight: 500; transition: all 0.3s ease; position: relative;
+        }
+        .nav-links a:hover { color: var(--muted-rose);}
+        .nav-links a.active::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--muted-rose);
+        }
+        .mobile-menu { display: none; flex-direction: column; cursor: pointer;}
+        .mobile-menu span {
+            width: 25px; height: 3px; background: var(--charcoal-gray); margin: 3px 0; transition: 0.3s;
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--primary-cream) 100%);
+            padding: 120px 0 80px; text-align: center; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23D4A574" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+        @keyframes float { 0% { transform: translateY(0);} 100% { transform: translateY(-50px);}}
+        .hero-content { position: relative; z-index: 1;}
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--deep-charcoal);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero p {
+            font-size: 1.2rem; color: var(--charcoal-gray); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        .cta-buttons {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        .btn {
+            padding: 12px 30px; border: none; border-radius: 50px; font-weight: 600;
+            text-decoration: none; transition: all 0.3s ease; display: inline-block; cursor: pointer;
+            position: relative; overflow: hidden;
+        }
+        .btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .btn:hover::before { left: 100%;}
+        .btn-primary { background: var(--muted-rose); color: var(--pure-white);}
+        .btn-primary:hover {
+            background: #c4956a; transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+        }
+        .btn-secondary {
+            background: transparent; color: var(--charcoal-gray); border: 2px solid var(--charcoal-gray);
+        }
+        .btn-secondary:hover {
+            background: var(--charcoal-gray); color: var(--pure-white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(45, 52, 54, 0.3);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px);}
+            to   { opacity: 1; transform: translateY(0);}
+        }
+        .section { padding: 80px 0; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;}
+        .section.visible { opacity: 1; transform: translateY(0);}
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; font-weight: 600; color: var(--deep-charcoal); text-align: center; margin-bottom: 3rem; position: relative;
+        }
+        .section-title::after {
+            content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 3px; background: var(--muted-rose);
+        }
+        .section-content {
+            max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;
+        }
+        .company-intro { background: var(--pure-white);}
+        .studio-section { background: var(--light-gray);}
+        .studio-features {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;
+        }
+        .feature-card {
+            background: var(--pure-white); padding: 2rem; border-radius: 15px; text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; position: relative; overflow: hidden;
+        }
+        .feature-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--muted-rose), var(--soft-sage));
+            transform: scaleX(0); transition: transform 0.3s ease;
+        }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15);}
+        .feature-card:hover::before { transform: scaleX(1);}
+        .feature-card i { font-size: 2.5rem; color: var(--muted-rose); margin-bottom: 1rem; transition: transform 0.3s ease;}
+        .feature-card:hover i { transform: scale(1.1);}
+        .feature-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--deep-charcoal);}
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;
+        }
+        .service-card {
+            background: var(--pure-white); padding: 2.5rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease; border: 1px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-color: var(--muted-rose);
+        }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--deep-charcoal); margin-bottom: 1rem;}
+        .contact-section { background: var(--pure-white);}
+        .contact-info {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem;
+        }
+        .contact-card {
+            background: var(--light-gray); padding: 2rem; border-radius: 15px; text-align: center; transition: all 0.3s ease;
+        }
+        .contact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1);}
+        .contact-card i { font-size: 2.5rem; color: var(--muted-rose); margin-bottom: 1rem;}
+        .contact-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--deep-charcoal); margin-bottom: 1rem;}
+        .contact-card a { color: var(--charcoal-gray); text-decoration: none; transition: color 0.3s ease;}
+        .contact-card a:hover { color: var(--muted-rose);}
+        footer {
+            background: var(--deep-charcoal); color: var(--pure-white); padding: 3rem 0 1rem;
+        }
+        .footer-content {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;
+        }
+        .footer-section h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; color: var(--muted-rose);}
+        .footer-section ul { list-style: none;}
+        .footer-section ul li { margin-bottom: 0.5rem;}
+        .footer-section ul li a { color: var(--pure-white); text-decoration: none; transition: all 0.3s ease;}
+        .footer-section ul li a:hover { color: var(--muted-rose); padding-left: 5px;}
+        .footer-bottom {
+            text-align: center; padding-top: 2rem; border-top: 1px solid #444; color: #ccc;
+        }
+        .contact-real {
+            background: var(--muted-rose); color: var(--pure-white); padding: 1rem; border-radius: 10px; margin-top: 1rem;
+        }
+        .contact-real h4 { margin-bottom: 0.5rem; font-family: 'Playfair Display', serif;}
+        .contact-real p { margin-bottom: 0.5rem; font-size: 0.9rem;}
+        .contact-real a { color: var(--pure-white); text-decoration: none; font-weight: 500;}
+        .contact-real a:hover { text-decoration: underline;}
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--pure-white);
+                flex-direction: column; padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex;}
+            .mobile-menu { display: flex;}
+            .hero h1 { font-size: 2rem;}
+            .hero p { font-size: 1rem;}
+            .section-title { font-size: 2rem;}
+            .cta-buttons { flex-direction: column; align-items: center;}
+            .btn { width: 200px; text-align: center;}
+            .services-grid, .studio-features { grid-template-columns: 1fr;}
+            .contact-info { grid-template-columns: 1fr;}
+        }
+        .loading {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-cream);
+            display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.5s ease;
+        }
+        .loading.hidden { opacity: 0; pointer-events: none;}
+        .spinner {
+            width: 50px; height: 50px; border: 4px solid var(--warm-beige); border-top: 4px solid var(--muted-rose);
+            border-radius: 50%; animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);}}
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">PT. Korea Trade Indonesia</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#studio" class="nav-link">Studio Hangang</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Authentic Korean Lifestyle, Curated for Indonesia</h1>
+                <p>Discover premium Korean fashion and beauty products through our carefully selected collections at competitive prices</p>
+                <div class="cta-buttons">
+                    <a href="#studio" class="btn btn-primary">Explore Studio Hangang</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Introduction -->
+    <section class="section company-intro" id="about">
+        <div class="container">
+            <h2 class="section-title">Bridging Korea & Indonesia Through Quality</h2>
+            <div class="section-content">
+                <p>PT. Korea Trade Indonesia is your trusted gateway to authentic Korean lifestyle products. Based in Bandung, we specialize in importing and curating premium Korean fashion and beauty brands for the Indonesian market at more competitive prices than other retailers.</p>
+                <p>Our Korean ownership ensures direct connections with manufacturers, eliminating unnecessary markups and providing genuine products at better prices for Indonesian consumers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Hangang Spotlight -->
+    <section class="section studio-section" id="studio">
+        <div class="container">
+            <h2 class="section-title">Studio Hangang - Our Flagship Experience</h2>
+            <div class="section-content">
+                <p>Visit our boutique at Paris Van Java Mall, Bandung, where Korean elegance meets Indonesian hospitality. Experience our curated collection in a space designed for discovery and inspiration.</p>
+            </div>
+            <div class="studio-features">
+                <div class="feature-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Physical Boutique</h3>
+                    <p>Located in Paris Van Java Mall, Bandung</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-gem"></i>
+                    <h3>Curated Collections</h3>
+                    <p>Fashion & beauty collections from Korea</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Personal Styling</h3>
+                    <p>Professional styling consultation</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Authentic Brands</h3>
+                    <p>Verified Korean brands and products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Product Categories</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>K-Fashion</h3>
+                    <p>Contemporary Korean fashion including streetwear, casual wear, and accessories directly from Seoul's top designers.</p>
+                </div>
+                <div class="service-card">
+                    <h3>K-Beauty Skincare</h3>
+                    <p>Revolutionary skincare products featuring the latest Korean beauty technology and natural ingredients.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Korean Cosmetics</h3>
+                    <p>Premium makeup products from leading Korean brands, offering both everyday essentials and special occasion looks.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Lifestyle Accessories</h3>
+                    <p>Unique Korean lifestyle products including bags, jewelry, and home accessories that reflect Korean design aesthetics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Studio Hangang Boutique</h3>
+                    <p>Paris Van Java Mall, Bandung<br>Experience Korean elegance in person</p>
+                    <div class="contact-real">
+                        <h4>Visit Us:</h4>
+                        <p>Paris Van Java Mall, Jl. Sukajadi No.131-139, Bandung, West Java 40162</p>
+                        <p>Daily: 10:00 - 22:00 WIB</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Contact Information</h3>
+                    <p>Ready to discover authentic Korean products?<br>Get in touch with us today</p>
+                    <div class="contact-real">
+                        <h4>Contact Us:</h4>
+                        <p>Phone: <a href="tel:+6285157665520">+62 851-5766-5520</a></p>
+                        <p>WhatsApp: <a href="https://wa.me/6285157665520">+62 851-5766-5520</a></p>
+                        <p>Email: <a href="mailto:info@koreatrade.co.id">info@koreatrade.co.id</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PT. Korea Trade Indonesia</h3>
+                    <p>Your trusted gateway to authentic Korean lifestyle products. Connecting Korean innovation with Indonesian style through direct partnerships and competitive pricing.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#studio">Studio Hangang</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Import Services</a></li>
+                        <li><a href="#">Retail Solutions</a></li>
+                        <li><a href="#">Wholesale Partnership</a></li>
+                        <li><a href="#">Brand Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Studio Hangang</h3>
+                    <ul>
+                        <li><a href="#">Korean Fashion</a></li>
+                        <li><a href="#">K-Beauty Products</a></li>
+                        <li><a href="#">Personal Styling</a></li>
+                        <li><a href="#">Lifestyle Accessories</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PT. Korea Trade Indonesia. All rights reserved. | Studio Hangang - Premium Korean Lifestyle Products</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Smooth scrolling and nav highlight
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    // Update active navigation
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    if(this.classList.contains('nav-link')) {
+                        this.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(248, 246, 240, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.backgroundColor = '#FFFFFF';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+    </script>
+</body>
+</html>
